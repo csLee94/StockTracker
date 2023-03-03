@@ -1,9 +1,6 @@
-{% if account_list %}
-<ul>
-    {% for account in account_list %}
-    <li><a herf="/pybo/{{ account.id }}/" {{ account.name }}></a></li>
-    {% endfor %}
-</ul>
+{% if user.is_authenticated %}
+<a href="{% url 'common:logout' %}">{{user.username}} (로그아웃)</a>
 {% else %}
-<p>등록된 계좌가 없습니다.</p>
+<a href="{% url 'common:login' %}">로그인</a>
+<a href="{% url 'common:signup' %}">회원가입</a>
 {% endif %}
