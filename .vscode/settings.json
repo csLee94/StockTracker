@@ -1,0 +1,15 @@
+{
+    "python.linting.pylintEnabled": true,
+    "python.linting.enabled": true,
+    "python.linting.pylintArgs": [
+        "--max-line-length=150",
+        "--disable=import-error",
+        "--disable=wrong-import-position",
+        "--disable=broad-except"
+    ],
+    "editor.formatOnSave": true,
+    "python.formatting.provider": "black",
+    "python.formatting.blackArgs": [
+        "--max-line-length=150"
+    ]
+}
