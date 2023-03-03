@@ -1,0 +1,9 @@
+{% if account_list %}
+<ul>
+    {% for account in account_list %}
+    <li><a herf="/pybo/{{ account.id }}/" {{ account.name }}></a></li>
+    {% endfor %}
+</ul>
+{% else %}
+<p>등록된 계좌가 없습니다.</p>
+{% endif %}
