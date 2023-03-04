@@ -7,6 +7,12 @@ from .models import Account
 
 # Create your views here.
 
+def home(request):
+    """
+    home
+    """
+    return render(request, "stocktracker/home.html")
+
 def index(request):
     """
     Index

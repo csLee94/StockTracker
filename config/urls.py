@@ -21,5 +21,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('stocktracker/', include('stocktracker.urls')),
     path('common/', include('common.urls')),
-    path('', views.index, name='index'),
+    path('', views.home, name='home'),
 ]

@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="d-grid gap-2 col-6 mx-auto">
+    {% if user.is_authenticated %}
+    <a href="{% url 'stocktracker:index' %}" class="btn btn-outline-dark" role="button" data-bs-toggle="button">Go to
+        Dashboard</a>
+    {% else %}
+    <a href="{% url 'common:login' %}" class="btn btn-outline-dark" role="button" data-bs-toggle="button">Go to
+        Dashboard</a>
+    {% endif %}
+</div>
+{% endblock %}

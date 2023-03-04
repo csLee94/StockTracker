@@ -14,7 +14,9 @@
             <input type="text" class="form-control" name="password" id="password"
                 value="{{ form.password.value | default_if_none:'' }}">
         </div>
-        <button type="submit" class="btn btn-primary">로그인</button>
+        <button type="submit" class="btn btn-primary">login</button>
+        <a href="{% url 'common:signup' %}" class="btn btn-outline-dark" role="button" data-bs-toggle="button">Sign
+            Up</a>
     </form>
 </div>
 {% endblock %}
