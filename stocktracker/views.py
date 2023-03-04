@@ -11,7 +11,7 @@ def home(request):
     """
     home
     """
-    return render(request, "stocktracker/home.html")
+    return render(request, "stocktracker/index.html")
 
 def index(request):
     """
