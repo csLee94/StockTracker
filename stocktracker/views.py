@@ -19,4 +19,4 @@ def index(request):
     """
     account_list = Account.objects.order_by('-balance')
     context = {'account_list':account_list}
-    return render(request, 'stocktracker/account_list.html', context)
+    return render(request, 'stocktracker/index.html', context)
