@@ -9,4 +9,5 @@ app_name = 'stocktracker'
 
 urlpatterns = [
     path('', views.index, name='index'),
+    path('account/create/', views.account_create, name='account_create')
 ]
