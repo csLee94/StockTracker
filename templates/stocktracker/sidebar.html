@@ -36,10 +36,10 @@
         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 <h6 class="collapse-header">Account list:</h6>
-                <a class="collapse-item" href="#">Cash</a>
-                <a class="collapse-item" href="#">Stock</a>
-                <hr style="margin: 0.3rem; color:rgba(0,0,0, .20); margin-inline-start: 1rem; margin-inline-end: 1rem;">
                 <a class="collapse-item" href="{% url 'stocktracker:account_create' %}">+ Add Account</a>
+                <hr style="margin: 0.3rem; color:rgba(0,0,0, .20); margin-inline-start: 1rem; margin-inline-end: 1rem;">
+                <a class="collapse-item" href="{% url 'stocktracker:asset_cash_update' %}">update Cash</a>
+                <a class="collapse-item" href="#">update Stock</a>
             </div>
         </div>
     </li>

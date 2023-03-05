@@ -1,11 +1,11 @@
 {% extends "base.html" %}
 {% block content %}
 <div class="d-sm-flex align-items-center justify-content-between mb-4">
-    <h1 class="h3 mb-0 text-gray-800">Create Account</h1>
+    <h1 class="h3 mb-0 text-gray-800">update Cash</h1>
 </div>
 <div class="card shadow mb-4">
     <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-        <h6 class="m-0 font-weight-bold text-primary">Account Info</h6>
+        <h6 class="m-0 font-weight-bold text-primary">Cash Info</h6>
     </div>
     <div class="card-body">
         <form method="post">
@@ -26,18 +26,22 @@
             <!-- end error section -->
             <div class="mb-3">
                 <label for="name" class="form-label">계좌 이름</label>
-                <input type="text" class="form-control" name="name" id="name"
-                    value="{{ form.name.value | default_if_none:''}}">
+                <select type="text" class="form-select" name="account_id" id="account_id">
+                    {% for account in account_list %}
+                    <option value="{{ account.id }}">{{ account.name }}</option>
+                    {% endfor %}
+                </select>
             </div>
             <div class="mb-3">
-                <label for="name_bank" class="form-label">증권사 이름</label>
-                <input type="text" class="form-control" name="name_bank" id="name_bank"
-                    value="{{ form.name_bank.value | default_if_none:''}}">
+                <label for="balance" class="form-label">잔고</label>
+                <input type="text" class="form-control" name="balance" id="balance" onkeyup="inputNumberFormat(this)"
+                    value="{{ form.balance.value | default_if_none:''}}">
             </div>
-            <button type="submit" class="btn btn-primary">Save</button>
+            <button onclick="submitNumber(form)" type="submit" class="btn btn-primary">Save</button>
             <a href="{% url 'stocktracker:index' %}" class="btn btn-secondary" role="button" data-bs-toggle="button"
                 style="margin-left: 1rem;">Cancel</a>
         </form>
     </div>
 </div>
+{% include "stocktracker/number_comma.html" %}
 {% endblock %}
