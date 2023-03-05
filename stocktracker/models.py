@@ -2,6 +2,7 @@
 created at: 2023-03-04
 """
 from django.db import models
+from django.contrib.auth.models import User
 
 # Create your models here.
 class Account(models.Model):
@@ -13,6 +14,7 @@ class Account(models.Model):
     name = models.CharField(max_length=50)
     name_bank = models.CharField(max_length=20)
     balance = models.IntegerField()
+    user_id = models.ForeignKey(User, on_delete=models.CASCADE)
 
 class AccountHistory(models.Model):
     """

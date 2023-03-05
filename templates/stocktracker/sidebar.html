@@ -36,13 +36,9 @@
         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 <h6 class="collapse-header">Account list:</h6>
-                {% if account_list %}
-                {% for account in account_list %}
-                <a class="collapse-item" href="#">{{ account.name }}</a>
-                {% endfor %}
+                <a class="collapse-item" href="#">Cash</a>
+                <a class="collapse-item" href="#">Stock</a>
                 <hr style="margin: 0.3rem; color:rgba(0,0,0, .20); margin-inline-start: 1rem; margin-inline-end: 1rem;">
-                {% else %}
-                {% endif %}
                 <a class="collapse-item" href="{% url 'stocktracker:account_create' %}">+ Add Account</a>
             </div>
         </div>
