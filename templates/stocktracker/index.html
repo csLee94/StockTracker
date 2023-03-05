@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block content %}
+{% if user.is_authenticated %}
+{% else %}
+<div class="d-sm-flex align-items-center justify-content-between mb-4">
+    <h1 class="h3 mb-0 text-gray-800">Please login</h1>
+</div>
+{% endif %}
+{% endblock %}

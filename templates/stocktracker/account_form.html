@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="d-sm-flex align-items-center justify-content-between mb-4">
+    <h1 class="h3 mb-0 text-gray-800">Create Account</h1>
+</div>
+<div class="card shadow mb-4">
+    <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+        <h6 class="m-0 font-weight-bold text-primary">Account Info</h6>
+    </div>
+    <div class="card-body">
+        <form method="post">
+            {% csrf_token %}
+            <!-- start displaying error section-->
+            {% if form.errors %}
+            <div class="alert alert-danger" role="alert">
+                {% for field in form %}
+                {% if field.errors %}
+                <div>
+                    <strong>{{ field.label }}</strong>
+                    {{ field.errors }}
+                </div>
+                {% endif %}
+                {% endfor %}
+            </div>
+            {% endif %}
+            <!-- end error section -->
+            <div class="mb-3">
+                <label for="name" class="form-label">계좌 이름</label>
+                <input type="text" class="form-control" name="name" id="name"
+                    value="{{ form.name.value | default_if_none:''}}">
+            </div>
+            <div class="mb-3">
+                <label for="name_bank" class="form-label">증권사 이름</label>
+                <input type="text" class="form-control" name="name_bank" id="name_bank"
+                    value="{{ form.name_bank.value | default_if_none:''}}">
+            </div>
+            <button type="submit" class="btn btn-primary">Save</button>
+            <a href="{% url 'stocktracker:index' %}" class="btn btn-secondary" role="button" data-bs-toggle="button"
+                style="margin-left: 1rem;">Cancel</a>
+        </form>
+    </div>
+</div>
+{% endblock %}
