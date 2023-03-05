@@ -18,7 +18,6 @@
 |property|description|
 |---|---|
 |id||
-|account_id||
 |created_at|생성일시|
 |from_account|출금 구좌|
 |to_account|입금 구좌|
